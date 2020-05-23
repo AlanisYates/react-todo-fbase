@@ -11,12 +11,14 @@ const {
 } = require('./APIs/todos');
 
 const {
-    loginUser
+    loginUser,
+    signUpUser,
 } = require('./APIs/users');
 
 
 //Users
 app.post('/login', loginUser)
+app.post('/signup', signUpUser)
 
 // Todos
 app.get('/todos', getAllTodos);
