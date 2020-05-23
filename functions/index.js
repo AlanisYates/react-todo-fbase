@@ -8,8 +8,17 @@ const {
     postOneTodo,
     deleteTodo,
     editTodo,
-} = require('./APIs/todos')
+} = require('./APIs/todos');
 
+const {
+    loginUser
+} = require('./APIs/users');
+
+
+//Users
+app.post('/login', loginUser)
+
+// Todos
 app.get('/todos', getAllTodos);
 app.post('/todo', postOneTodo);
 app.delete('/todo/:todoId', deleteTodo);
