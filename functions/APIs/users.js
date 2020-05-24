@@ -97,7 +97,7 @@ exports.signUpUser = (request, response) => {
                 return response.status(500).json({ general: 'Something went wrong, please try again' });
             }
         });
-};
+}
 
 deleteImage = (imageName) => {
     const bucket = admin.storage().bucket();
