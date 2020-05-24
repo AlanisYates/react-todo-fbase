@@ -15,6 +15,7 @@ const {
     loginUser,
     signUpUser,
     uploadProfilePhoto,
+    getUserDetail
 } = require('./APIs/users');
 
 
@@ -22,6 +23,7 @@ const {
 app.post('/login', loginUser)
 app.post('/signup', signUpUser)
 app.post('/user/image', auth, uploadProfilePhoto);
+app.get('/user', auth, getUserDetail);
 
 // Todos
 app.get('/todos', getAllTodos);
