@@ -84,7 +84,7 @@ class Account extends Component {
 		const authToken = localStorage.getItem('AuthToken');
 		axios.defaults.headers.common = { Authorization: `${authToken}` };
 		axios
-			.get('https://us-central1-todoapp-b81d8.cloudfunctions.net/api/user')
+			.get('/user')
 			.then((response) => {
 				console.log(response.data);
 				this.setState({
@@ -130,7 +130,7 @@ class Account extends Component {
 		form_data.append('content', this.state.content);
 		axios.defaults.headers.common = { Authorization: `${authToken}` };
 		axios
-			.post('https://us-central1-todoapp-b81d8.cloudfunctions.net/api/user/image', form_data, {
+			.post('/user/image', form_data, {
 				headers: {
 					'content-type': 'multipart/form-data'
 				}
@@ -162,7 +162,7 @@ class Account extends Component {
 			country: this.state.country
 		};
 		axios
-			.post('https://us-central1-todoapp-b81d8.cloudfunctions.net/api/user', formRequest)
+			.post('/user', formRequest)
 			.then(() => {
 				this.setState({ buttonLoading: false });
 			})

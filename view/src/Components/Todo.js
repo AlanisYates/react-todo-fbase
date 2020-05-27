@@ -126,7 +126,7 @@ class Todo extends Component {
     const authToken = localStorage.getItem("AuthToken");
     axios.defaults.headers.common = { Authorization: `${authToken}` };
     axios
-      .get("https://us-central1-todoapp-b81d8.cloudfunctions.net/api/todos")
+      .get("/todos")
       .then((response) => {
         this.setState({
           todos: response.data,
@@ -144,7 +144,7 @@ class Todo extends Component {
     axios.defaults.headers.common = { Authorization: `${authToken}` };
     let todoId = data.todo.todoId;
     axios
-      .delete(`https://us-central1-todoapp-b81d8.cloudfunctions.net/api/todo/${todoId}`)
+      .delete(`/todo/${todoId}`)
       .then(() => {
         window.location.reload();
       })

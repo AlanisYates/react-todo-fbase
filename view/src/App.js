@@ -7,6 +7,11 @@ import Home from "./Components/Home";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 
+import axios from "axios";
+
+axios.defaults.baseURL =
+  "https://us-central1-todoapp-b81d8.cloudfunctions.net/api";
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -37,5 +42,3 @@ const App = () => {
 };
 
 export default App;
-
-
